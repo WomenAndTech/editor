@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'editor',
+    podModulePrefix: 'editor/features',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',

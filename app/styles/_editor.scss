@@ -1,0 +1,171 @@
+#editor {
+  position: relative;
+  padding-top: 50px;
+  min-height: 100vh;
+  &.open {
+    #editor-menu ul{
+      -webkit-transform: translateX(0px);
+         -moz-transform: translateX(0px);
+          -ms-transform: translateX(0px);
+           -o-transform: translateX(0px);
+              transform: translateX(0px);
+    }
+    #editor-menu-toggle {
+      background: #22a2e9;
+      -webkit-transform: rotate(135deg);
+         -moz-transform: rotate(135deg);
+          -ms-transform: rotate(135deg);
+           -o-transform: rotate(135deg);
+              transform: rotate(135deg);
+
+    }
+  }
+}
+
+#editor-area {
+  position: relative;
+  background: #ccc;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  min-height:100px;
+  z-index: 0;
+  display: inline-block;
+}
+
+#editor-menu {
+  display: block;
+  height: 100%;
+  color: #fff;
+  ul {
+    position: fixed;
+    overflow: hidden;
+    z-index: 100;
+    background: #202224;
+    display: inline-block;
+    float: left;
+    list-style: none;
+    margin: 0px;
+    padding: 17px 0px;
+    width: 200px;
+    height: 100%;
+    -webkit-transform: translateX(-100%);
+       -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+         -o-transform: translateX(-100%);
+            transform: translateX(-100%); 
+    -webkit-transition: transform .25s ease-in-out;
+       -moz-transition: transform .25s ease-in-out;
+        -ms-transition: transform .25s ease-in-out;
+         -o-transition: transform .25s ease-in-out;
+            transition: transform .25s ease-in-out;
+  }
+  li {
+    text-transform: capitalize;
+    display: block;
+    font-size: 20px;
+    color: #8c9392;
+    cursor: pointer;
+    padding: 6px 28px;
+    line-height: 36px;
+    -webkit-transition: color .25s ease-in-out;
+       -moz-transition: color .25s ease-in-out;
+        -ms-transition: color .25s ease-in-out;
+         -o-transition: color .25s ease-in-out;
+            transition: color .25s ease-in-out;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+#subMenu {
+  border-left: 2px solid #27292b;
+  position: fixed;
+  background: #202224;
+  width: 312px;
+  height: calc(100% - 50px);
+  display: inline-block;
+  z-index: 99;
+  overflow: hidden;
+  -webkit-transition: transform .25s ease-in-out;
+     -moz-transition: transform .25s ease-in-out;
+      -ms-transition: transform .25s ease-in-out;
+       -o-transition: transform .25s ease-in-out;
+          transition: transform .25s ease-in-out;
+  -webkit-transform: translateX(-100%);
+     -moz-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+       -o-transform: translateX(-100%);
+          transform: translateX(-100%);
+  &.visible {
+    -webkit-transform: translateX(200px);
+       -moz-transform: translateX(200px);
+        -ms-transform: translateX(200px);
+         -o-transform: translateX(200px);
+            transform: translateX(200px);
+  }
+  span {
+    display: block;
+    width: 100%;
+  }
+
+  ul {
+    display: block;
+    overflow-y: scroll;
+    width: 100%;
+    margin: 0px;
+    padding: 10px 0px;
+  }
+  li {
+    display: block;
+    overflow: hidden;
+    padding: 10px 20px;
+  }
+
+  img {
+    display: inline-block;
+    float: left;
+    width: 100%;
+    height: auto;
+  }
+}
+
+#editor-menu-toggle {
+  z-index: 2000;
+  display: flex;
+  text-align: center;
+  background: #1e1e1e;
+  color: #fff;
+  box-shadow: 0 0 1px rgba(255,255,255,.25);
+  border-radius: 100px;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  line-height: 50px;
+  cursor: pointer;
+  outline: none;
+  ::selection {
+    background: none;
+  }
+  -webkit-transition: background .25s ease-in-out;
+     -moz-transition: background .25s ease-in-out;
+      -ms-transition: background .25s ease-in-out;
+       -o-transition: background .25s ease-in-out;
+          transition: background .25s ease-in-out;
+  -webkit-transition: transform .25s ease-in-out;
+     -moz-transition: transform .25s ease-in-out;
+      -ms-transition: transform .25s ease-in-out;
+       -o-transition: transform .25s ease-in-out;
+          transition: transform .25s ease-in-out;
+  &:hover {
+    background: #22a2e9;
+  }
+  span{
+    outline: none;
+    font-size: 30px;
+    width: 100%;
+  }
+}
