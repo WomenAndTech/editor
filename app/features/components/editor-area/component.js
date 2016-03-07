@@ -13,8 +13,6 @@ export default Ember.Component.extend({
 
     var placeholder = Ember.$('.placeholder');
 
-    console.log(placeholder.length);
-
     if(placeholder.length < 1) {
       var p = $('<div class="placeholder">');
       Ember.$('#editor-area').append(p);
