@@ -13,13 +13,18 @@ export default Ember.Component.extend({
     Ember.$('#editor').removeClass('open');
     Ember.$('#subMenu').removeClass('visible');
   },
-  doubleClick: function(){
-    var el = this.get('el');
+  dragEnd: function(event){
+    event.preventDefault();
 
-    Ember.$('#editor').removeClass('open');
-    Ember.$('#subMenu').removeClass('visible');
-    Ember.$('#editor-area').append($(el));
+    Ember.$('.placeholder').remove();
   },
+  // doubleClick: function(){
+  //   var el = this.get('el');
+
+  //   Ember.$('#editor').removeClass('open');
+  //   Ember.$('#subMenu').removeClass('visible');
+  //   Ember.$('#editor-area').append($(el));
+  // },
   el: `<section contentEditable>
         <div class="container">
           <h2>hello world</h2>

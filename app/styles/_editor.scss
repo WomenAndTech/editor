@@ -1,7 +1,25 @@
+#settings-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  z-index: 1000;
+  background: #fff;
+  height: 50px;
+  .back {
+    display: inline-block;
+    float: left;
+  }
+  .actions {
+    display: inline-block;
+    float: right;
+  }
+}
+
 #editor {
-  position: relative;
   padding-top: 50px;
-  min-height: 100vh;
+  overflow: hidden;
   &.open {
     #editor-menu ul{
       -webkit-transform: translateX(0px);

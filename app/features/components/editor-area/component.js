@@ -10,23 +10,22 @@ export default Ember.Component.extend({
   },
   dragOver: function(event) {
     event.preventDefault();
+    var x = event.originalEvent.clientX;
+    var y = event.originalEvent.clientY;
 
     var placeholder = Ember.$('.placeholder');
 
     if(placeholder.length < 1) {
-      var p = $('<div class="placeholder">');
-      Ember.$('#editor-area').append(p);
+      var pholder = $('<div class="placeholder">');
+      Ember.$('#editor-area').append(pholder);
     }
-    else {
 
-    }
   },
   drop: function(event) {
     event.preventDefault();
-    var placeholder = Ember.$('.placeholder');
+
     var name = event.dataTransfer.getData('text/data');
 
-    this.$(placeholder).remove();
     this.$().append(name);
 
     this.closeMenu();

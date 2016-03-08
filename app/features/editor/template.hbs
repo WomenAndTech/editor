@@ -1,3 +1,13 @@
+<nav id="settings-menu">
+  {{link-to 'Back' 'index'}}
+  {{input placeholder="New Post Title" value=model.title}}
+
+  <div class="actions">
+    <button {{action 'save'}}>
+      Save
+    </button>
+  </div>
+</nav>
 <div id="editor" class="open">
   {{editor-menu-toggle id="editor-menu-toggle"}}
   {{editor-menu id="editor-menu"}}
