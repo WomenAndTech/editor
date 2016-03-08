@@ -32,6 +32,7 @@ $.fn.closestToOffset = function(offset) {
 
 export default Ember.Component.extend({
   tagName: 'article',
+  currentSection: null,
   closeMenu: function(){
     $('#editor').removeClass('open');
   },
@@ -40,11 +41,9 @@ export default Ember.Component.extend({
   },
   dragOver: function(event) {
     event.preventDefault();
-
+    
     var currentSection = $(event.target).closestToOffset({left: 0, top: 0}).closest('section')[0];
     var placeholder = $('.placeholder');
-
-    this.set('currentSection', currentSection);
 
     if(placeholder.length < 1) {
       placeholder = $('<div class="placeholder">');
@@ -52,27 +51,24 @@ export default Ember.Component.extend({
     }
 
     if(currentSection) {
+      this.set('currentSection', currentSection);
       $(currentSection).after(placeholder);
     }
-    else {
-      $('#editor-area').append(placeholder)
-    }
-
     // scroll to placeholder
     $(window).scrollTop(placeholder);
   },
   drop: function(event) {
-    event.preventDefault();
+    // event.preventDefault();
 
-    var name = event.dataTransfer.getData('text/data');
+    var block = $(event.dataTransfer.getData('text/data'));
 
     var currentSection = this.get('currentSection');
 
     if(currentSection) {
-      $(currentSection).after($(name));
+      $(currentSection).after(block);
     }
     else {
-      this.$().append(name);
+      this.$().append(block);
     }
 
     this.closeMenu();

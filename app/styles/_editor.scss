@@ -3,10 +3,12 @@
   top: 0;
   left: 0;
   right: 0;
-  padding: 10px;
+  padding: 20px;
   z-index: 1000;
   background: #fff;
-  height: 50px;
+  height: 80px;
+  font-size: 20px;
+  border-bottom: 2px solid #eee;
   .back {
     display: inline-block;
     float: left;
@@ -18,7 +20,7 @@
 }
 
 #editor {
-  padding-top: 50px;
+  padding-top: 80px;
   overflow: hidden;
   &.open {
     #editor-menu ul{
