@@ -216,19 +216,14 @@
   line-height: 50px;
   cursor: pointer;
   outline: none;
+  -webkit-transition: transform .25s ease-in-out, background 1s ease-in-out;
+     -moz-transition: transform .25s ease-in-out, background 1s ease-in-out;
+      -ms-transition: transform .25s ease-in-out, background 1s ease-in-out;
+       -o-transition: transform .25s ease-in-out, background 1s ease-in-out;
+          transition: transform .25s ease-in-out, background 1s ease-in-out;
   ::selection {
     background: none;
   }
-  -webkit-transition: background .25s ease-in-out;
-     -moz-transition: background .25s ease-in-out;
-      -ms-transition: background .25s ease-in-out;
-       -o-transition: background .25s ease-in-out;
-          transition: background .25s ease-in-out;
-  -webkit-transition: transform .25s ease-in-out;
-     -moz-transition: transform .25s ease-in-out;
-      -ms-transition: transform .25s ease-in-out;
-       -o-transition: transform .25s ease-in-out;
-          transition: transform .25s ease-in-out;
   &:hover {
     background: #22a2e9;
   }
