@@ -13,11 +13,6 @@ export default Ember.Component.extend({
     Ember.$('#editor').removeClass('open');
     Ember.$('#subMenu').removeClass('visible');
   },
-  dragEnd: function(event){
-    event.preventDefault();
-
-    Ember.$('.placeholder').remove();
-  },
   // doubleClick: function(){
   //   var el = this.get('el');
 

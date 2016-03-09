@@ -60,7 +60,7 @@ export default Ember.Component.extend({
   drop: function(event) {
     // event.preventDefault();
 
-    var block = $(event.dataTransfer.getData('text/data'));
+    var block = $(event.dataTransfer.getData('text/data')) || null;
 
     var currentSection = this.get('currentSection');
 
@@ -68,9 +68,11 @@ export default Ember.Component.extend({
       $(currentSection).after(block);
     }
     else {
-      this.$().append(block);
+
+      if(block) this.$().append(block);
     }
 
+    $('.placeholder').remove();
     this.closeMenu();
   }
 });
