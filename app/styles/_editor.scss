@@ -50,7 +50,7 @@ $settings-menu-height: 80px;
   padding: 0px;
   margin: 0px;
   width: 100%;
-  min-height: calc(100% - $settings-menu-height);
+  min-height: calc(100% - #{$settings-menu-height});
   z-index: 0;
   display: inline-block;
 }
