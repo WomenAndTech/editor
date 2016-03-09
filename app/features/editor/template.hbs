@@ -1,9 +1,12 @@
 <nav id="settings-menu">
-  {{link-to 'Back' 'index'}}
+  {{link-to 'Back' 'index' class="back"}}
   {{input placeholder="New Post Title" value=model.title}}
 
   <div class="actions">
-    <button {{action 'save'}}>
+    <button>
+      Preview
+    </button>
+    <button {{action 'save'}} class="save">
       Save
     </button>
   </div>
@@ -11,5 +14,5 @@
 <div id="editor" class="open">
   {{editor-menu-toggle id="editor-menu-toggle"}}
   {{editor-menu id="editor-menu"}}
-  {{editor-area id="editor-area"}}
+  {{editor-area id="editor-area" body=model.body}}
 </div>

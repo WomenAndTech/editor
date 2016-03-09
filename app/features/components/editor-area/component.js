@@ -54,25 +54,28 @@ export default Ember.Component.extend({
       this.set('currentSection', currentSection);
       $(currentSection).after(placeholder);
     }
+    else {
+      this.set('currentSection', null);
+    }
     // scroll to placeholder
     $(window).scrollTop(placeholder);
   },
   drop: function(event) {
-    // event.preventDefault();
-
     var block = $(event.dataTransfer.getData('text/data')) || null;
-
     var currentSection = this.get('currentSection');
 
-    if(currentSection) {
-      $(currentSection).after(block);
-    }
-    else {
-
-      if(block) this.$().append(block);
+    if(block) {
+      $(block).addClass(`hello-${Date.now()}`);
+      if(currentSection) {
+        $(currentSection).after(block);
+      }
     }
 
     $('.placeholder').remove();
+
+    var newBody = this.$().html();
+
+    this.set('body', newBody);
     this.closeMenu();
   }
 });

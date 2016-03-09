@@ -1,23 +1,75 @@
 $settings-menu-height: 80px;
+$highlight: #22a2e9;
 
 #settings-menu {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  padding: 20px;
+  padding: 0px;
   z-index: 1000;
   background: #fff;
   height: $settings-menu-height;
   font-size: 20px;
+  line-height: 40px;
   border-bottom: 2px solid #eee;
   .back {
+    margin: 0px;
+    padding: 20px;
     display: inline-block;
     float: left;
+    text-decoration: none;
+    color: $highlight;
   }
   .actions {
+    padding: 0px 20px;
     display: inline-block;
     float: right;
+    button {
+      padding: 10px 20px;
+      font-size: 15px;
+      line-height: 1.5em;
+      margin: 17.5px 0px;
+      outline: none;
+      border: 1px solid #ccc;
+      border-radius: 100px;
+      background: #fff;
+      color: #888;
+      -webkit-transition: background .25s ease-in, color .25s ease-in;
+         -moz-transition: background .25s ease-in, color .25s ease-in;
+          -ms-transition: background .25s ease-in, color .25s ease-in;
+           -o-transition: background .25s ease-in, color .25s ease-in;
+              transition: background .25s ease-in, color .25s ease-in;
+      &:hover {
+        background: #f8f8f8;
+        color: #666;
+      }
+      &.save {
+        border: none;
+        background: $highlight;
+        color: #fff;
+      }
+    }
+  }
+  input {
+    min-width: 300px;
+    margin: 19px 0px;
+    padding: 10px 15px;
+    color: #7d7d7d;
+    border: none;
+    display: inline-block;
+    -webkit-transition: color .25s ease-in;
+       -moz-transition: color .25s ease-in;
+        -ms-transition: color .25s ease-in;
+         -o-transition: color .25s ease-in;
+            transition: color .25s ease-in;
+    &:hover {
+      color: $highlight; 
+    }
+    &:focus {
+      color: #7d7d7d;
+      outline: 1px solid $highlight;
+    }
   }
 }
 
@@ -33,7 +85,7 @@ $settings-menu-height: 80px;
               transform: translateX(0px);
     }
     #editor-menu-toggle {
-      background: #22a2e9;
+      background: $highlight;
       -webkit-transform: rotate(135deg);
          -moz-transform: rotate(135deg);
           -ms-transform: rotate(135deg);
@@ -227,7 +279,7 @@ $settings-menu-height: 80px;
     background: none;
   }
   &:hover {
-    background: #22a2e9;
+    background: $highlight;
   }
   span{
     outline: none;
