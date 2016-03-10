@@ -61,12 +61,11 @@ export default Ember.Component.extend({
     else {
       this.set('currentSection', null);
     }
-    // scroll to placeholder
+
     $(window).scrollTop(placeholder);
   },
   drop: function(event) {
     var block = $(event.dataTransfer.getData('text/data')) || null;
-    var body = this.get('body');
     var currentSection = this.get('currentSection');
 
     if(currentSection) {

@@ -8,4 +8,4 @@ export default Ember.Component.extend({
   mouseLeave: function(){
     Ember.$('#subMenu').removeClass('visible');
   }
-})
+});
