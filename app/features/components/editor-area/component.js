@@ -33,6 +33,10 @@ $.fn.closestToOffset = function(offset) {
 export default Ember.Component.extend({
   tagName: 'article',
   currentSection: null,
+  didInsertElement: function(){
+    var body = this.get('body');
+    this.$().append(body);
+  },
   closeMenu: function(){
     $('#editor').removeClass('open');
   },
@@ -62,20 +66,21 @@ export default Ember.Component.extend({
   },
   drop: function(event) {
     var block = $(event.dataTransfer.getData('text/data')) || null;
+    var body = this.get('body');
     var currentSection = this.get('currentSection');
 
-    if(block) {
-      $(block).addClass(`hello-${Date.now()}`);
-      if(currentSection) {
-        $(currentSection).after(block);
-      }
+    block.append(`<p>Date-${Date.now()}</p>`);
+
+    if(currentSection) {
+      $(currentSection).after(block);
+    }
+    else {
+      this.$().append(block);
     }
 
+    this.set('body', this.$().html().replace("<!---->", ""));
+
     $('.placeholder').remove();
-
-    var newBody = this.$().html();
-
-    this.set('body', newBody);
     this.closeMenu();
   }
 });
