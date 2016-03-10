@@ -69,8 +69,6 @@ export default Ember.Component.extend({
     var body = this.get('body');
     var currentSection = this.get('currentSection');
 
-    block.append(`<p>Date-${Date.now()}</p>`);
-
     if(currentSection) {
       $(currentSection).after(block);
     }
