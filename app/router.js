@@ -9,6 +9,9 @@ Router.map(function() {
   this.route('editor', function(){
 
   });
+  this.route('posts', function(){
+    this.route('show', {path: '/:post_id'});
+  });
 });
 
 export default Router;

@@ -48,6 +48,14 @@ $highlight: #22a2e9;
         border: none;
         background: $highlight;
         color: #fff;
+        -webkit-transition: opacity .25s ease-in;
+           -moz-transition: opacity .25s ease-in;
+            -ms-transition: opacity .25s ease-in;
+             -o-transition: opacity .25s ease-in;
+                transition: opacity .25s ease-in;
+        &:hover {
+          opacity: 0.8;
+        }
       }
     }
   }
