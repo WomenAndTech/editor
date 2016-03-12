@@ -75,9 +75,10 @@ export default Ember.Component.extend({
       this.$().append(block);
     }
 
+    $('.placeholder').remove();
+
     this.set('body', this.$().html().replace("<!---->", ""));
 
-    $('.placeholder').remove();
     this.closeMenu();
   }
 });
