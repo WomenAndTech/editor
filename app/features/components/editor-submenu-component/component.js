@@ -20,7 +20,7 @@ export default Ember.Component.extend({
   //   Ember.$('#subMenu').removeClass('visible');
   //   Ember.$('#editor-area').append($(el));
   // },
-  el: `<section contentEditable>
+  el: `<section>
         <div class="container">
           <h2>hello world</h2>
         </div>

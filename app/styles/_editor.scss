@@ -44,6 +44,18 @@ $highlight: #22a2e9;
         background: #f8f8f8;
         color: #666;
       }
+      &.settings {
+        overflow: hidden;
+        margin: 0px;
+        line-height: 0px;
+        height: 44px;
+        padding: 0px;
+        img {
+          vertical-align: center;
+          width: 15px;
+          height: auto;
+        }
+      }
       &.save {
         border: none;
         background: $highlight;

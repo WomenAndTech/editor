@@ -43,10 +43,10 @@ export default Ember.Component.extend({
   click: function(){
     this.closeMenu();
   },
-  dragOver: function(event) {
-    event.preventDefault();
+  dragOver: function(ev) {
+    ev.preventDefault();
     
-    var currentSection = $(event.target).closestToOffset({left: 0, top: 0}).closest('section')[0];
+    var currentSection = $(ev.target).closestToOffset({left: 0, top: 0}).closest('section')[0];
     var placeholder = $('.placeholder');
 
     if(placeholder.length < 1) {
@@ -64,8 +64,8 @@ export default Ember.Component.extend({
 
     $(window).scrollTop(placeholder);
   },
-  drop: function(event) {
-    var block = $(event.dataTransfer.getData('text/data')) || null;
+  drop: function(ev) {
+    var block = $(ev.dataTransfer.getData('text/data')) || null;
     var currentSection = this.get('currentSection');
 
     if(currentSection) {
