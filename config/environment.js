@@ -27,6 +27,16 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.APIServer = 'http://localhost:3000';
+    ENV.contentSecurityPolicy ={
+      'default-src': ["'self'"],
+      'script-src':  ["'self'"],
+      'font-src':    ["'self'"],
+      'connect-src': ["'self'"],
+      'img-src':     ["'self'", "http://womenandtech.com"],
+      'style-src':   ["'self'"],
+      'media-src':   ["'self'"]
+    };
+
   }
 
   if (environment === 'test') {

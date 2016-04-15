@@ -1,6 +1,10 @@
 $settings-menu-height: 80px;
 $highlight: #22a2e9;
 
+[contentEditable] {
+  outline: none;
+}
+
 #settings-menu {
   position: fixed;
   top: 0;

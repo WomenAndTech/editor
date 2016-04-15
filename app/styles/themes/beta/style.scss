@@ -1,4 +1,26 @@
 .container {
   max-width: 1200px;
   margin: 0px auto;
+  overflow: hidden;
+}
+
+.archives {
+  list-style: none;
+  margin: 0;
+  padding: 0px;
+  li {
+    float: left;
+    background: #f3f3f3;
+    display: inline-block;
+    width: calc(33.33% - 30px;);
+    margin: 15px;
+    overflow: hidden;
+    h2 {
+      text-align: center;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }

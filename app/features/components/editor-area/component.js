@@ -6,26 +6,26 @@ var $ = Ember.$;
 $.fn.closestToOffset = function(offset) {
     var el = null, elOffset, x = offset.left, y = offset.top, distance, dx, dy, minDistance;
     this.each(function() {
-        elOffset = $(this).offset();
+      elOffset = $(this).offset();
 
-        if (
-        (x >= elOffset.left)  && (x <= elOffset.right) &&
-        (y >= elOffset.top)   && (y <= elOffset.bottom)
-        ) {
-            el = $(this);
-            return false;
-        }
+      if (
+      (x >= elOffset.left)  && (x <= elOffset.right) &&
+      (y >= elOffset.top)   && (y <= elOffset.bottom)
+      ) {
+        el = $(this);
+        return false;
+      }
 
-        var offsets = [[elOffset.left, elOffset.top], [elOffset.right, elOffset.top], [elOffset.left, elOffset.bottom], [elOffset.right, elOffset.bottom]];
-        for (var off in offsets) {
-            dx = offsets[off][0] - x;
-            dy = offsets[off][1] - y;
-            distance = Math.sqrt((dx*dx) + (dy*dy));
-            if (minDistance === undefined || distance < minDistance) {
-                minDistance = distance;
-                el = $(this);
-            }
+      var offsets = [[elOffset.left, elOffset.top], [elOffset.right, elOffset.top], [elOffset.left, elOffset.bottom], [elOffset.right, elOffset.bottom]];
+      for (var off in offsets) {
+        dx = offsets[off][0] - x;
+        dy = offsets[off][1] - y;
+        distance = Math.sqrt((dx*dx) + (dy*dy));
+        if (minDistance === undefined || distance < minDistance) {
+          minDistance = distance;
+          el = $(this);
         }
+      }
     });
     return el;
 };
@@ -65,20 +65,23 @@ export default Ember.Component.extend({
     $(window).scrollTop(placeholder);
   },
   drop: function(ev) {
-    var block = $(ev.dataTransfer.getData('text/data')) || null;
+    var component = $(ev.dataTransfer.getData('text/data')) || null;
     var currentSection = this.get('currentSection');
 
+    component = component.attr('contenteditable', true);
+
     if(currentSection) {
-      $(currentSection).after(block);
+      $(currentSection).after(component);
     }
     else {
-      this.$().append(block);
+      this.$().append(component);
     }
 
     $('.placeholder').remove();
 
-    this.set('body', this.$().html().replace("<!---->", ""));
+    
+    this.$().find('*').removeAttr('style');
 
-    this.closeMenu();
+    this.set('body', this.$());
   }
 });

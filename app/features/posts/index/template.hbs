@@ -1,7 +1,16 @@
-<h2>Posts</h2>
+<div class="container"> 
+  <h1>Posts</h1>
 
-<ul>
-  {{#each model as |post|}}
-    <li>{{link-to post.title 'posts.show' post.slug}}</li>
-  {{/each}}
-</ul>
+  <ol class="archives">
+    {{#each model as |post|}}
+      <li>
+        <div class="thumbnail">
+          <img src="cover-1.jpg" alt="">  
+        </div>
+        <div class="details">
+          <h2>{{link-to post.title 'posts.show' post.id}}</h2>
+        </div>
+      </li>
+    {{/each}}
+  </ol>
+</div>
