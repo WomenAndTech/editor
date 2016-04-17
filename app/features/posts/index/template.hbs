@@ -5,7 +5,9 @@
     {{#each model as |post|}}
       <li>
         <div class="thumbnail">
-          <img src="cover-1.jpg" alt="">  
+          {{#link-to 'posts.show' post.id}}
+            <img src="cover-1.jpg" alt="">
+          {{/link-to}}
         </div>
         <div class="details">
           <h2>{{link-to post.title 'posts.show' post.id}}</h2>

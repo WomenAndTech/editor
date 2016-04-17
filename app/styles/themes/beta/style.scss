@@ -1,3 +1,53 @@
+#mainOutlet {
+  margin-top: 72px;
+}
+
+#mainmenu {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  display: block;
+  width: 100%;
+  background: #FF3818;
+  .logo {
+    line-height: 0px;
+    width: 228px;
+    display: inline-block;
+    float: left;
+    img {
+      width: 100%;
+    }
+  }
+  a {
+    line-height: 0px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.5em;
+  }
+  ul {
+    float: right;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+    float: left;
+    a {
+      font-style: italic;
+      padding: 0 3px;
+      margin: 0 0 0 25px;
+      line-height: 1.25em;
+      &:hover {
+        color: #fcb8ab;
+        border-bottom: 2px solid #fcb8ab;
+      }
+    }
+  }
+}
+
 .container {
   max-width: 1200px;
   margin: 0px auto;

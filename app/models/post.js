@@ -4,5 +4,7 @@ export default DS.Model.extend({
   title: DS.attr('string', {defaultValue: `Untitled Post ${Date.now()}`}),
   body: DS.attr('string'),
   isDraft: DS.attr('boolean', {defaultValue: true}),
-  slug: DS.attr('string')
+  type: DS.attr('string', {defaultValue: "post"}),
+  slug: DS.attr('string'),
+  meta: DS.attr()
 });
