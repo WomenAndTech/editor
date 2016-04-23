@@ -6,11 +6,15 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('interviews', function(){
+    this.route('show', {path: '/:interview_id'});
+  });
+
   this.route('posts', function(){
     this.route('show', {path: '/:post_id'});
   });
-  this.route('editor', function(){
-
+  this.route('admin', function(){
+    this.route('editor');
   });
 });
 

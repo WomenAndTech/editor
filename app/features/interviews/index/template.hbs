@@ -1,0 +1,18 @@
+<div class="container"> 
+  <h1>Interviews</h1>
+
+  <ol class="archives">
+    {{#each model as |interview|}}
+      <li>
+        <div class="thumbnail">
+          {{#link-to 'interviews.show' interview.id}}
+            <img src="cover-1.jpg" alt="">
+          {{/link-to}}
+        </div>
+        <div class="details">
+          <h2>{{link-to interview.title 'interviews.show' interview.id}}</h2>
+        </div>
+      </li>
+    {{/each}}
+  </ol>
+</div>

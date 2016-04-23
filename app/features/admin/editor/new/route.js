@@ -1,8 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function() {
-    return this.store.createRecord('post', {body: ""});
+  model: function(params) {
+    return this.store.createRecord('post', {body: "", type: 'interview'});
   },
   actions: {
     willTransition: function(transition){
