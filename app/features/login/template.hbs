@@ -1,0 +1,10 @@
+{{main-menu}}
+
+<div id="login"> 
+  <form {{action 'authenticate' on='submit'}}>
+    <h2>Log In</h2>
+    {{input value=email placeholder="Email" type="email"}}
+    {{input value=password placeholder="Password" type="password"}}
+    <button class="btn primary">Log In</button>
+  </form>
+</div>

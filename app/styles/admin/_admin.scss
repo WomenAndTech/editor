@@ -1,4 +1,4 @@
-$admin-menu-width: 150px;
+$admin-menu-width: 200px;
 
 .adminMenu {
   padding: 20px 0px;
@@ -11,6 +11,7 @@ $admin-menu-width: 150px;
   top: 0;
   bottom: 0;
   left: 0;
+  font-size: 1em;
   ul {
     list-style: none;
     padding: 0px;
@@ -27,6 +28,20 @@ $admin-menu-width: 150px;
     &.active, &:hover {
       background: #666;
     }
+  }
+  #accountMenu {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background: #ccc;
+    width: 100%;
+    padding: 0px;
+    vertical-align: middle;
+  }
+  .logout {
+    padding: 0px;
+    display: inline-block;
+    float: right;
   }
 }
 
@@ -51,6 +66,9 @@ table {
     padding: 10px;
     margin: 0px;
     border-bottom: 1px solid #ccc;
+    &:last-child {
+      text-align: right;
+    }
   }
 }
 .adminTitle {

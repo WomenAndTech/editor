@@ -12,3 +12,8 @@
     {{link-to 'Settings' 'admin.settings'}}
   </li>
 </ul>
+
+<div id="accountMenu">
+  {{session.data.authenticated.firstname}} {{session.data.authenticated.lastname}}
+  <a href="#" {{action 'logout'}} class="logout">Log out</a>
+</div>

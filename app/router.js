@@ -6,6 +6,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('login');
+
   this.route('interviews', function(){
     this.route('show', {path: '/:interview_id'});
   });
@@ -13,6 +15,7 @@ Router.map(function() {
   this.route('posts', function(){
     this.route('show', {path: '/:post_id'});
   });
+  
   this.route('admin', function(){
     this.route('editor');
     this.route('posts');
