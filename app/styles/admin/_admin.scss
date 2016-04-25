@@ -38,8 +38,12 @@ $admin-menu-width: 200px;
     padding: 0px;
     vertical-align: middle;
   }
+  span {
+    display: inline-block;
+    padding: 10px;
+  }
   .logout {
-    padding: 0px;
+    padding: 10px;
     display: inline-block;
     float: right;
   }
