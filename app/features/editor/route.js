@@ -1,8 +1,19 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  queryParams: {
+    id: {
+      refreshModel: true
+    },
+    type: 'null'
+  },
   model: function(params) {
-    return this.store.createRecord('post', {body: "", type: 'interview'});
+    if(params.id) {
+      return this.store.find('post', params.id)
+    }
+    else {
+      return this.store.createRecord('post', {type: params.type});
+    }
   },
   actions: {
     willTransition: function(transition){

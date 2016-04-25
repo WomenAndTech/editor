@@ -1,0 +1,53 @@
+$admin-menu-width: 150px;
+
+.adminMenu {
+  padding: 20px 0px;
+  background: #333;
+  overflow: hidden;
+  display: inline-block;
+  width: $admin-menu-width;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+  }
+  a {
+    color: #fff;
+    display: block;
+    padding: 10px 30px;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+      background: #666;
+    }
+  }
+}
+
+#adminOutlet {
+  width: calc(100% - #{$admin-menu-width});
+  height: 100%;
+  right: 0px;
+  position: fixed;
+  padding: 50px;
+  overflow-y: scroll;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  thead {
+    background: #ccc;
+    border-bottom: 1px solid #ccc;
+  }
+  th, td {
+    padding: 10px;
+    margin: 0px;
+    border-bottom: 1px solid #ccc;
+  }
+}

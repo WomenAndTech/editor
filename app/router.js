@@ -15,7 +15,13 @@ Router.map(function() {
   });
   this.route('admin', function(){
     this.route('editor');
+    this.route('posts');
+    this.route('interviews');
+    this.route('users');
+    this.route('settings');
   });
+
+  this.route('editor');
 });
 
 export default Router;

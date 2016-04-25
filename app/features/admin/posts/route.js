@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  beforeModel: function(){
-    this.transitionTo('editor.new');
+  model: function(){
+    return this.store.findAll('post');
   }
 });

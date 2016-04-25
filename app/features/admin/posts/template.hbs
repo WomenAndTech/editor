@@ -1,0 +1,38 @@
+<div id="posts">
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Title
+        </th>
+        <th>
+          Type
+        </th>
+        <th>
+          Status
+        </th>
+        <th>
+          Published By
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |post|}}
+        <tr>
+          <td>
+            {{link-to post.title 'editor' (query-params id=post.id)}}
+          </td>
+          <td>
+            {{post.type}}
+          </td>
+          <td>
+            {{post.isDraft}}
+          </td>
+          <td>
+            {{post.createdAt}}
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
