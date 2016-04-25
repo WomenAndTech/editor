@@ -12,7 +12,13 @@ export default Ember.Route.extend({
       return this.store.find('post', params.id)
     }
     else {
-      return this.store.createRecord('post', {type: params.type});
+      let defaults = {};
+
+      if(params.type) {
+        defaults.type = params.type;
+      }
+
+      return this.store.createRecord('post', defaults);
     }
   },
   actions: {

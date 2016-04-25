@@ -21,8 +21,10 @@ $admin-menu-width: 150px;
     display: block;
     padding: 10px 30px;
     text-decoration: none;
+    transition: background 0.25s ease-in;
+    transition: background 0.25s ease-in;
+    transition: background 0.25s ease-in;
     &:hover {
-      text-decoration: underline;
       background: #666;
     }
   }
@@ -49,5 +51,46 @@ table {
     padding: 10px;
     margin: 0px;
     border-bottom: 1px solid #ccc;
+  }
+}
+.adminTitle {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.actions {
+  display: inline-block;
+  float: right;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 20px;
+  background: #666;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  &.primary {
+    background: #337ab7;
+  }
+  &.success {
+    background: #5cb85c;
+  }
+  &.warning {
+    background: #f0ad4e;
+  }
+  &.error {
+    background: #d9534f;
+  }
+}
+
+form {
+  width: 100%;
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
   }
 }

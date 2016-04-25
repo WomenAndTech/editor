@@ -1,0 +1,9 @@
+<form {{action 'createUser' on='submit'}}>
+  <h2>Create User</h2>
+  {{input placeholder="First Name" value=model.firstname}}
+  {{input placeholder="Last Name" value=model.lastname}}
+  {{input type="email" placeholder="Email" value=model.email}}
+
+  {{input type="password" placeholder="Password" value=model.password}}
+  {{input type="password" placeholder="Password Confirmation" value=model.confirmation}}
+</form>

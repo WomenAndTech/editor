@@ -1,0 +1,42 @@
+<div class="actions">
+  {{link-to 'Create User' 'admin.users.new' class="btn primary"}}
+</div>
+
+<table id="users">
+  <thead>
+    <tr>
+      <th>
+        Full Name
+      </th>
+      <th>
+        Email
+      </th>
+      <th>
+        Roles
+      </th>
+      <th>
+        Actions
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |user|}}
+      <tr>
+        <td>
+          {{#link-to 'admin.users.show' user.id}}
+            {{user.firstname}} {{user.lastname}}
+          {{/link-to}}
+        </td>
+        <td>
+          {{user.email}}
+        </td>
+        <td>
+          {{user.roles}}
+        </td>
+        <td>
+          Edit | Delete
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

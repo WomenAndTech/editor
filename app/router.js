@@ -17,7 +17,10 @@ Router.map(function() {
     this.route('editor');
     this.route('posts');
     this.route('interviews');
-    this.route('users');
+    this.route('users', function(){
+      this.route('new');
+      this.route('show', {path: '/:user_id'});
+    });
     this.route('settings');
   });
 

@@ -1,11 +1,11 @@
 <div class="adminTitle">
-  <h2>All Posts</h2>
+  <h2>All Interviews</h2>
 </div>
 <div class="actions">
-  {{link-to 'Create Post' 'editor' class="btn primary"}}
+  {{link-to 'Create Post' 'editor' (query-params type="interview") class="btn primary"}}
 </div>
 
-<table id="posts">
+<table id="interviews">
   <thead>
     <tr>
       <th>
@@ -38,6 +38,14 @@
           {{post.createdAt}}
         </td>
       </tr>
+    {{else}}
+      <tr>
+        <td colspan="100">
+          No Posts
+        </td>
+      </tr>
     {{/each}}
+
+
   </tbody>
 </table>
