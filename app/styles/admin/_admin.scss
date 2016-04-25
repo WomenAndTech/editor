@@ -73,6 +73,12 @@ table {
     &:last-child {
       text-align: right;
     }
+    &.noPosts {
+      text-align: center;
+    }
+    &.type {
+      text-transform: capitalize;
+    }
   }
 }
 .adminTitle {
@@ -80,7 +86,7 @@ table {
   display: inline-block;
 }
 
-.actions {
+.adminActions {
   display: inline-block;
   float: right;
   margin-bottom: 20px;

@@ -1,7 +1,7 @@
 <div class="adminTitle">
   <h2>All Posts</h2>
 </div>
-<div class="actions">
+<div class="adminActions">
   {{link-to 'Create Post' 'editor' class="btn primary"}}
 </div>
 
@@ -28,20 +28,26 @@
   <tbody>
     {{#each model as |post|}}
       <tr>
-        <td>
+        <td class="title">
           {{link-to post.title 'editor' (query-params id=post.id)}}
         </td>
-        <td>
+        <td class="type">
           {{post.type}}
         </td>
-        <td>
+        <td class="isDraft">
           {{post.isDraft}}
         </td>
-        <td>
+        <td class="createdAt">
           {{post.createdAt}}
         </td>
-        <td>
+        <td class="actions">
           {{link-to 'Edit' 'editor' (query-params id=post.id)}} | <a href="#" {{action 'delete' post}}>Delete</a>
+        </td>
+      </tr>
+    {{else}}
+      <tr>
+        <td colspan="100" class="noPosts">
+          No Posts
         </td>
       </tr>
     {{/each}}
