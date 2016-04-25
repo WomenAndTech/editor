@@ -2,7 +2,7 @@ $admin-menu-width: 150px;
 
 .adminMenu {
   padding: 20px 0px;
-  background: #333;
+  background: #202224;
   overflow: hidden;
   display: inline-block;
   width: $admin-menu-width;
@@ -24,7 +24,7 @@ $admin-menu-width: 150px;
     transition: background 0.25s ease-in;
     transition: background 0.25s ease-in;
     transition: background 0.25s ease-in;
-    &:hover {
+    &.active, &:hover {
       background: #666;
     }
   }
@@ -72,8 +72,10 @@ table {
   color: #fff;
   text-decoration: none;
   border-radius: 50px;
+  border: none;
+  outline: none;
   &.primary {
-    background: #337ab7;
+    background: #22a2e9;
   }
   &.success {
     background: #5cb85c;

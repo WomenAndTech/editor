@@ -5,6 +5,13 @@ export default Ember.Route.extend({
     return this.store.createRecord('user');
   },
   actions: {
+    cancel: function(){
+      let model = this.get('controller.model');
+
+      model.deleteRecord();
+
+      this.transitionTo('admin.users');
+    },
     willTransition: function(transition){
       let model = this.get('controller.model');
 
