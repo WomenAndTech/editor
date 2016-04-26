@@ -1,7 +1,7 @@
 import Ember from 'ember';
+const { getOwner } = Ember;
 
-export function initialize() {  
-  let application = arguments[1] || arguments[0];
+export function initialize(application) {  
   let applicationRoute = application.lookup('route:application');
   let session = application.lookup('service:session');
   

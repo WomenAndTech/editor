@@ -33,15 +33,31 @@ $.fn.closestToOffset = function(offset) {
 export default Ember.Component.extend({
   tagName: 'article',
   currentSection: null,
-  didInsertElement: function(){
-    var body = this.get('body');
-    this.$().append(body);
-  },
+
+  _setupContent: function() { 
+    Ember.run.scheduleOnce('afterRender', this, ()=>{
+      // get the model's body content...if it's blank or doesn't exist - use the component's HTML to start.
+      var content = this.get('body') ? $(this.get('body')) : this.$();
+      
+      // make the content area editable - it's stripped off during a save operation
+      content.attr('contenteditable', true);
+      
+      // drop the content into the compoent
+      this.$().html(content);
+
+      this.set('content', this.$());
+    });
+  }.on('didInsertElement'),
+
+
   closeMenu: function(){
     $('#editor').removeClass('open');
   },
   click: function(){
     this.closeMenu();
+  },
+  keyUp: function(ev){
+    this.sendAction('_contentDidChange');
   },
   dragOver: function(ev) {
     ev.preventDefault();
@@ -65,10 +81,15 @@ export default Ember.Component.extend({
     $(window).scrollTop(placeholder);
   },
   drop: function(ev) {
-    var component = $(ev.dataTransfer.getData('text/data')) || null;
     var currentSection = this.get('currentSection');
+    var component = $(ev.dataTransfer.getData('text/data')) || null;
 
-    component = component.attr('contenteditable', true);
+    if(!component) {
+      this.get('toastr').error('The dropped component is empty');
+      return true;
+    }
+
+    component.attr('contenteditable', true);
 
     if(currentSection) {
       $(currentSection).after(component);
@@ -79,9 +100,11 @@ export default Ember.Component.extend({
 
     $('.placeholder').remove();
 
-    
-    this.$().find('*').removeAttr('style');
-
-    this.set('body', this.$());
+    this.sendAction('_contentDidChange');
+  },
+  actions: {
+    _contentDidChange: function(){
+      this.sendAction('_contentDidChange');
+    }
   }
 });

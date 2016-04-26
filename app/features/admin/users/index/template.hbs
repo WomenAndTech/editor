@@ -13,6 +13,9 @@
         Full Name
       </th>
       <th>
+        Username
+      </th>
+      <th>
         Email
       </th>
       <th>
@@ -30,6 +33,9 @@
           {{#link-to 'admin.users.show' user.id}}
             {{user.firstname}} {{user.lastname}}
           {{/link-to}}
+        </td>
+        <td>
+          {{user.username}}
         </td>
         <td>
           {{user.email}}

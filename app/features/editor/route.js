@@ -1,6 +1,10 @@
 import Ember from 'ember';
+import config from 'editor/config/environment';
+
+let {$} = Ember;
 
 export default Ember.Route.extend({
+  session: Ember.inject.service(),
   queryParams: {
     id: {
       refreshModel: true
@@ -40,29 +44,10 @@ export default Ember.Route.extend({
       }
     },
 
-    save: function(){
-      var model = this.get('controller.model');
-      var body = model.get('body');
-
-      $(body)
-        .removeAttr('contenteditable')
-        .removeAttr('contentEditable')
-        .removeAttr('style')
-        .find('*') //find all children
-          .removeAttr('contenteditable')
-          .removeAttr('contentEditable')
-          .removeAttr('style')
-
-      body = $(body).html();
-
-      model.set('body', body);
-
-      model.save()
-        .then((post)=>{
-          this.toast.success(`${post.get('type')} "${post.get('title')} " saved!`);
-        },(error)=>{
-          this.toast.error(`Could not save ${model.get('post')} "${model.get('title')}"`);
-        });
-    }
+    updateBody: function(content){
+      let model = this.get('controller.model');
+      console.log(content);
+      model.set('body', content);
+    },
   }
 });

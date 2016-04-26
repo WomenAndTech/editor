@@ -1,7 +1,6 @@
 <nav id="settings-menu">
   {{link-to 'Back' 'admin.posts' class="back"}}
   {{input placeholder="New Post Title" value=model.title}}
-
   <div class="actions">
     <button class="settings">
       <img src="assets/editor/icons/cog.svg" alt="">
@@ -9,14 +8,15 @@
     <button>
       Preview
     </button>
-    <button {{action 'save'}} class="save">
+    <button {{action 'save'}} class="save" disabled={{disableSave}}>
       Save
     </button>
   </div>
 </nav>
 
 <div id="editor" class="open">
+
   {{editor-menu-toggle id="editor-menu-toggle"}}
   {{editor-menu id="editor-menu"}}
-  {{editor-area id="editor-area" body=model.body}}
+  {{editor-area id="editor-area" body=model.body _contentDidChange='_contentDidChange' content=content}}
 </div>

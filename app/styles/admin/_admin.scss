@@ -66,6 +66,14 @@ table {
     background: #ccc;
     border-bottom: 1px solid #ccc;
   }
+  tbody {
+    tr {
+      transition: background .3s ease-in;
+      &:hover {
+        background: #e1e1e1;
+      }
+    }
+  }
   th, td {
     padding: 10px;
     margin: 0px;
@@ -123,4 +131,9 @@ form {
     padding: 10px;
     margin-bottom: 20px;
   }
+}
+
+small {
+  font-size: 0.5em;
+  color: #aaa;
 }

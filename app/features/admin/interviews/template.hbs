@@ -2,7 +2,7 @@
   <h2>All Interviews</h2>
 </div>
 <div class="adminActions">
-  {{link-to 'Create Post' 'editor' (query-params type="interview") class="btn primary"}}
+  {{link-to 'Create Interview' 'editor' (query-params type="interview") class="btn primary"}}
 </div>
 
 <table id="interviews">
@@ -28,7 +28,7 @@
         <td>
           {{link-to post.title 'editor' (query-params id=post.id)}}
         </td>
-        <td>
+        <td class="type">
           {{post.type}}
         </td>
         <td>

@@ -72,6 +72,9 @@ $highlight: #22a2e9;
         &:hover {
           opacity: 0.8;
         }
+        &:disabled {
+          background: #ccc;
+        }
       }
     }
   }
