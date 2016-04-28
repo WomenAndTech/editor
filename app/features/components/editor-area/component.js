@@ -38,6 +38,17 @@ export default Ember.Component.extend({
     Ember.run.scheduleOnce('afterRender', this, ()=>{
       // get the model's body content...if it's blank or doesn't exist - use the component's HTML to start.
       var content = this.get('body') ? $(this.get('body')) : this.$();
+      var mutationObserver = new MutationObserver(()=>{
+        this.sendAction('_contentDidChange');
+      });
+      var mutationConfig = { 
+        attributes: true, 
+        childList: true, 
+        characterData: true, 
+        subtree: true, 
+        attributeOldValue: true, 
+        characterDataOldValue: true 
+      };
       
       // make the content area editable - it's stripped off during a save operation
       content.attr('contenteditable', true);
@@ -46,9 +57,10 @@ export default Ember.Component.extend({
       this.$().html(content);
 
       this.set('content', this.$());
+
+      mutationObserver.observe(this.$().get(0), mutationConfig);
     });
   }.on('didInsertElement'),
-
 
   closeMenu: function(){
     $('#editor').removeClass('open');
@@ -56,9 +68,7 @@ export default Ember.Component.extend({
   click: function(){
     this.closeMenu();
   },
-  keyUp: function(ev){
-    this.sendAction('_contentDidChange');
-  },
+
   dragOver: function(ev) {
     ev.preventDefault();
     
@@ -100,11 +110,5 @@ export default Ember.Component.extend({
 
     $('.placeholder').remove();
 
-    this.sendAction('_contentDidChange');
-  },
-  actions: {
-    _contentDidChange: function(){
-      this.sendAction('_contentDidChange');
-    }
   }
 });

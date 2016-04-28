@@ -1,5 +1,4 @@
 import Ember from 'ember';
-const { getOwner } = Ember;
 
 export function initialize(application) {  
   let applicationRoute = application.lookup('route:application');
