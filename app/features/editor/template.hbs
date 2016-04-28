@@ -2,7 +2,7 @@
   {{link-to 'Back' 'admin.posts' class="back"}}
   {{input placeholder="New Post Title" value=model.title}}
   <div class="actions">
-    <button class="settings">
+    <button class="settings" {{action 'toggleSettingsModal'}}>
       <img src="assets/editor/icons/cog.svg" alt="">
     </button>
     <button>
@@ -19,4 +19,5 @@
   {{editor-menu-toggle id="editor-menu-toggle"}}
   {{editor-menu id="editor-menu"}}
   {{editor-area id="editor-area" body=model.body _contentDidChange='_contentDidChange' content=content}}
+  {{editor-settings-modal settings=model.meta save='saveSettings' visible=displaySettingsModal toggleSettingsModal='toggleSettingsModal'}}
 </div>

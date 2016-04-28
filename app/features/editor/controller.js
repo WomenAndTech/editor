@@ -9,11 +9,18 @@ export default Ember.Controller.extend({
     return this.get('_contentChanged') ? false : true;
   }.property('_contentChanged'),
 
+  displaySettingsModal: false,
+
   actions: {
     _contentDidChange: function(){
       this.set('_contentChanged', true);
     },
-    save: function(){
+    toggleSettingsModal: function(){
+      let displayingModal = this.get('displaySettingsModal');
+      
+      displayingModal ? this.set('displaySettingsModal', false) : this.set('displaySettingsModal', true); 
+    },
+    save: function(){ 
       let model = this.get('model');
       let content = this.get('content');
       
