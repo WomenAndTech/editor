@@ -5,6 +5,7 @@ export default DS.Model.extend({
   body: DS.attr('string', {defaultValue: "<section/>"}),
   isDraft: DS.attr('boolean', {defaultValue: true}),
   type: DS.attr('string', {defaultValue: "post"}),
+  status: DS.attr('string', {defaultValue: "draft"}),
   // slug: DS.attr('string'),
   meta: DS.attr()
 });
