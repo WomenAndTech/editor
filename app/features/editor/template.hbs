@@ -5,9 +5,7 @@
     <button class="settings" {{action 'toggleSettingsModal'}}>
       <img src="assets/editor/icons/cog.svg" alt="">
     </button>
-    <button>
-      Preview
-    </button>
+    {{link-to 'Preview' 'posts.show' model.id target="_blank"}}
     <button {{action 'save'}} class="save" disabled={{disableSave}}>
       Save
     </button>
