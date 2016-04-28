@@ -22,6 +22,7 @@ export default Ember.Controller.extend({
       model.save()
         .then((post)=>{
           this.toast.success(`${post.get('type')} "${post.get('title')} " saved!`);
+          this.set('_contentChanged', false);
         },(error)=>{
           this.toast.error(`Could not save ${model.get('post')} "${model.get('title')}"`);
         });
