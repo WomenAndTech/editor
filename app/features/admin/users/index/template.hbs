@@ -44,7 +44,7 @@
           {{user.roles}}
         </td>
         <td>
-          Edit | Delete
+          {{users-list-actions user=user session=session.data.authenticated deleteUser=deleteUser}}
         </td>
       </tr>
     {{/each}}

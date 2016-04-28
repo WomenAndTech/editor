@@ -14,6 +14,7 @@ export default BaseAuthenticator.extend({
       firstname: payload.firstname,
       lastname: payload.lastname,
       email: payload.email,
+      admin: payload.admin,
       token: token
     };
   },

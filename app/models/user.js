@@ -7,5 +7,6 @@ export default DS.Model.extend({
   email: DS.attr('string'),
   bio: DS.attr('string'),
   role: DS.attr('string'),
-  admin: DS.attr('boolean', {defaultValue: false})
+  admin: DS.attr('boolean', {defaultValue: false}),
+  password: DS.attr('string')
 });
