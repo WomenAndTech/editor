@@ -12,7 +12,7 @@ export default Ember.Component.extend({
       e.preventDefault();
     },
     closeModal: function(){
-      this.set('visible', false)
+      this.set('visible', false);
     }
   }
 });

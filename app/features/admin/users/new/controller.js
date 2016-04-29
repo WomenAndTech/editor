@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
       }, (err)=>{
         console.log(err);
         this.toast.error(err.message);
-      })
+      });
     },
     cancel: function(){
       let model = this.get('model');
