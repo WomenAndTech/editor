@@ -52,7 +52,16 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.APIServer = 'http://api.womenandtech.com';
+    ENV.contentSecurityPolicy ={
+      'default-src': ["'self'"],
+      'script-src':  ["'self'"],
+      'font-src':    ["'self'"],
+      'connect-src': ["'self'"],
+      'img-src':     ["'self'", "http://womenandtech.com"],
+      'style-src':   ["'self'"],
+      'media-src':   ["'self'"]
+    };
   }
 
   return ENV;
