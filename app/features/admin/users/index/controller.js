@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
       user.destroyRecord().then((user)=>{
         this.toast.success(`User deleted...Bye bye ${user.firstname}`);
       },(err)=>{
-        this.toast.error(`${err.message}`)
+        this.toast.error(`${err.message}`);
       });
     }
   }

@@ -1,5 +1,3 @@
-import Ember from 'ember';
-
 export function initialize(application) {  
   let applicationRoute = application.lookup('route:application');
   let session = application.lookup('service:session');

@@ -1,7 +1,7 @@
 $admin-menu-width: 200px;
 
 .adminMenu {
-  padding: 20px 0px;
+  padding: 0px 0px;
   background: #202224;
   overflow: hidden;
   display: inline-block;
@@ -12,6 +12,17 @@ $admin-menu-width: 200px;
   bottom: 0;
   left: 0;
   font-size: 1em;
+  .logo {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px;
+    a {
+      padding: 0px;
+    }
+    img {
+      width: 100%;
+    }
+  }
   ul {
     list-style: none;
     padding: 0px;

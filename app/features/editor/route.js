@@ -1,7 +1,4 @@
 import Ember from 'ember';
-import config from 'editor/config/environment';
-
-let {$} = Ember;
 
 export default Ember.Route.extend({
   session: Ember.inject.service(),
@@ -13,7 +10,7 @@ export default Ember.Route.extend({
   },
   model: function(params) {
     if(params.id) {
-      return this.store.find('post', params.id)
+      return this.store.find('post', params.id);
     }
     else {
       let defaults = {};
