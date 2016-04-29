@@ -13,12 +13,21 @@ export default Ember.Component.extend({
     Ember.$('#editor').removeClass('open');
     Ember.$('#subMenu').removeClass('visible');
   },
-  // doubleClick: function(){
-  //   var el = this.get('el');
-
-  //   Ember.$('#editor').removeClass('open');
-  //   Ember.$('#subMenu').removeClass('visible');
-  //   Ember.$('#editor-area').append($(el));
-  // },
-  el: '<section><div class="container"><h2>hello world 2</h2></div></section>'
+  el: `<header class="row">
+        <div class="span9">
+          <div class="interview-number double-digits interview-number-18">18</div>
+          <h1 class="clearfix" id="twitter-handle" data-twitter-handle="saralouhicks">
+          Sara Hicks</h1>
+          <address>
+            <div class="author-image"></div>
+            <div class="author-info">
+              <p class="author">An interview with <a target="_blank" href="https://twitter.com/sophiehe" rel="author" title="<Sophie He's twitter profile"> <strong>Sophie He</strong>
+              </a>
+            </p>
+            <p class="date">
+            May 6, 2015</p>
+            </div>
+          </address>
+        </div>
+      </header>`
 });
