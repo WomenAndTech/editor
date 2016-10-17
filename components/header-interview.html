@@ -3,9 +3,9 @@
   <template>    
     <header class="border header-interview">
       <div class="wrapper-sm">
-        <h2>{{interviewee-name}}</h2>
+        <h2>{{interviewee}}</h2>
         <p class="intro">{{intro}}</p>
-        <p class="author">An interview with <a href="{{interviewer-link}}">{{interviewer-name}}</a></p>
+        <p class="author">An interview with <a href="{{interviewerLink}}">{{interviewer}}</a></p>
         
         <ul class="social-share">
           <li>
@@ -35,7 +35,7 @@
     Polymer({
       is: "header-interview",
       properties: {
-        interviewee-name: {
+        interviewee: {
           type: String,
           value: "Interviewee's Full Name"
         },
@@ -43,11 +43,11 @@
           type: String,
           value: "Interview intro paragraph."
         },
-        interviewer-name: {
+        interviewer: {
           type: String,
           value: "Interviewer's Full Name"
         },
-        interviewer-link: {
+        interviewerLink: {
           type: String,
           value: "Link to interviewer's website or social media"
         },
