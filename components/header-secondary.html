@@ -1,0 +1,26 @@
+<dom-module id="header-secondary">
+
+  <template>    
+    <header class="no-border header-secondary">
+      <h2>{{heading}}</h2>
+      <p>{{content}}</p>
+    </header> 
+  </template>
+
+  <script>
+    Polymer({
+      is: "header-secondary",
+      properties: {
+        heading: {
+          type: String,
+          value: "Page header heading"
+        },
+        content: {
+          type: String,
+          value: "Paragraph content inside of page header."
+        }
+      }
+    });
+  </script>
+
+</dom-module>

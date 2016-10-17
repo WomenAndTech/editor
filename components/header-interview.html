@@ -1,0 +1,58 @@
+<dom-module id="header-interview">
+
+  <template>    
+    <header class="border header-interview">
+      <div class="wrapper-sm">
+        <h2>{{interviewee}}</h2>
+        <p class="intro">{{intro}}</p>
+        <p class="author">An interview with <a href="{{interviewerLink}}">{{interviewer}}</a></p>
+        
+        <ul class="social-share">
+          <li>
+            <a href="//facebook.com/WomenAndTech" title="Facebook @WomenAndTech">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+              <span class="screen-readers">Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="//twitter.com/WomenAndTech" title="Twitter @WomenAndTech">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+              <span class="screen-readers">Twitter</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:contact@womenandtech.com" title="Email contact@womenandtech.com">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span class="screen-readers">Email contact@womenandtech.com</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+  </template>
+
+  <script>
+    Polymer({
+      is: "header-interview",
+      properties: {
+        interviewee: {
+          type: String,
+          value: "Interviewee's Full Name"
+        },
+        intro: {
+          type: String,
+          value: "Interview intro paragraph."
+        },
+        interviewer: {
+          type: String,
+          value: "Interviewer's Full Name"
+        },
+        interviewerLink: {
+          type: String,
+          value: "Link to interviewer's website or social media"
+        },
+      }
+    });
+  </script>
+
+</dom-module>
