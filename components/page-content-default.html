@@ -1,0 +1,28 @@
+<dom-module id="page-content-default">
+
+  <template>    
+    <article class="border">
+      <div class="wrapper-sm">
+        <h2>{{heading}}</h2>
+        <p>{{content}}</p>
+      </div>
+    </article>  
+  </template>
+
+  <script>
+    Polymer({
+      is: "page-content-default",
+      properties: {
+        heading: {
+          type: String,
+          value: "Page content heading"
+        },
+        content: {
+          type: String,
+          value: "Content inside of a paragraph."
+        }
+      }
+    });
+  </script>
+
+</dom-module>
